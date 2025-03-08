@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 
 export default function HeaderSection() {
   return (
-    <section className="" id="header-section">
+    <section id="header-section" >
       <div
         className="flex flex-col justify-center"
         data-aos="fade-right"

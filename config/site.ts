@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 
 export const siteConfig = {
-  titleweb: "April Pollo",
+  titleweb: "Aprilpollo",
   name: "Phonsing Taleman",
   nickname: "NOAH",
   description: "portfolio of NOAH",
@@ -25,7 +25,7 @@ export const siteConfig = {
     github: "https://github.com/phonsing-Hub",
     twitter: "https://x.com/phonsing_",
     docs: "https://nextui.org",
-    linkedin: "https://linkedin.com/in/polsing-ps/",
+    linkedin: "https://linkedin.com/in/polsing-ps",
     sponsor: "#",
   },
 };

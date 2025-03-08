@@ -8,7 +8,7 @@ const educational = [
     location: "Sripatum University",
     description:
       "Learn to design, analyze, and test vehicles, manage production systems, and operate automotive-related equipment like engines.",
-    image: "/reshot-icon-engineering-trophy.svg",
+    image: "logo/logo2.svg",
     mlh: "https://www.spu.ac.th/fac/engineer/programs/next-generation-automotive-engineering-1",
     links: [],
   },
@@ -18,7 +18,7 @@ const educational = [
     location: "Sripatum University",
     description:
       "Learn to design computer systems, including both hardware and software, for use in various information processing operations.",
-    image: "/reshot-icon-electronics.svg",
+    image: "logo/logo1.svg",
     mlh: "https://www.spu.ac.th/fac/informatics/programs/computer-engineering",
     links: [],
   },
@@ -31,7 +31,7 @@ const work = [
     location: "Somsin Service Limited Partnership",
     description:
       "Management and Maintenance of Electronic Server Networks (ATM)",
-    image: "/reshot-icon-network.svg",
+    image: "logo/logo3.svg",
     mlh: "#",
     links: [],
   },
@@ -49,7 +49,7 @@ const work = [
 
 export default function AboutSection() {
   return (
-    <section className="my-10" id="about-section">
+    <section id="about-section" className="my-10" >
       <div
         className="grid md:grid-cols-2 gap-10 pl-2 backdrop-blur-[4px] rounded-md"
         data-aos="zoom-in"

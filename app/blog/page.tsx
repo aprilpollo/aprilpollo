@@ -1,35 +1,21 @@
-import { Metadata } from "next"
-import { PlusCircle } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
-import { Separator } from "@/components/ui/separator"
-
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs"
-
-import { AlbumArtwork } from "@/components/dashboard/album-artwork"
-import { Menu } from "@/components/dashboard/menu"
-import { PodcastEmptyPlaceholder } from "@/components/dashboard/podcast-empty-placeholder"
-import { Sidebar } from "@/components/dashboard/sidebar"
-import { listenNowAlbums, madeForYouAlbums } from "@/components/data/albums"
-import { playlists } from "@/components/data/playlists"
-
-export const metadata: Metadata = {
-  title: "April Pollo",
-  description: "My Blog",
-}
+// import { Metadata } from "next";
+// import { PlusCircle } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+// import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+// import { Separator } from "@/components/ui/separator";
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+// import { AlbumArtwork } from "@/components/dashboard/album-artwork";
+// import { PodcastEmptyPlaceholder } from "@/components/dashboard/podcast-empty-placeholder";
+// import { Sidebar } from "@/components/dashboard/sidebar";
+// import { listenNowAlbums, madeForYouAlbums } from "@/components/data/albums";
+// import { playlists } from "@/components/data/playlists";
+import { Menu } from "@/components/dashboard/menu";
 
 export default function MusicPage() {
   return (
-    <>
-      <div className="block">
-        <Menu />
-        <div className="border-t">
+    <div className="block">
+      <Menu />
+      {/* <div className="border-t">
           <div className="bg-background">
             <div className="grid lg:grid-cols-5">
               <Sidebar playlists={playlists} className="hidden lg:block" />
@@ -134,8 +120,7 @@ export default function MusicPage() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </>
-  )
+        </div> */}
+    </div>
+  );
 }
