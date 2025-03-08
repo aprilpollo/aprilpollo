@@ -2,9 +2,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ScrollText, Github } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { ModeToggle } from "@/components/mode-toggle";
 
 import DropdownBlog from "@/components/apps/dropdown-blog";
-import { ModeToggle } from "@/components/mode-toggle";
+import Home from "@/components/apps/home/home";
 const blog = (
   <div className="hidden sm:flex gap-2 absolute right-0">
     <ModeToggle/>
@@ -30,9 +31,9 @@ export default function Page() {
         />
       </section>
       <header id="header-section" className="bg-zinc-50 dark:bg-zinc-900">
-        <section className="max-w-6xl mx-auto px-4">
+        <section className="max-w-7xl mx-auto px-4">
           <div className="h-20 flex items-center gap-8 relative">
-            <div className=" relative top-[-30px]">
+            <div className=" relative top-[-30px] border-b-zinc-900 border-b-2 p-[2px] rounded-b-full">
               <Avatar className="w-28 h-28 text-large">
                 <AvatarImage src="https://github.com/shadcn.png" />
                 <AvatarFallback>P</AvatarFallback>
@@ -49,7 +50,9 @@ export default function Page() {
           </div>
         </section>
       </header>
-      <main id="content" className="max-w-7xl mx-auto px-6"></main>
+      <main id="content" className="max-w-7xl mx-auto px-6">
+        <Home/>
+      </main>
     </div>
   );
 }
