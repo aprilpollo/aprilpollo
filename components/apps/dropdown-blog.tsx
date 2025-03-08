@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +13,7 @@ import { siteConfig } from "@/config/site";
 import { ScrollText, Github, ChevronDown } from "lucide-react";
 
 export default function DropdownBlog() {
-  const router = useRouter();
+  // const router = useRouter();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="sm:hidden flex text-xs font-bold text-default-500 items-center cursor-pointer">
