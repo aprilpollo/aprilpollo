@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { ThemeProvider } from "@/components/theme-provider";
+
 import clsx from "clsx";
 import "./globals.css";
 

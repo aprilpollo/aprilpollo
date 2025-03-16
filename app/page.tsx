@@ -10,18 +10,18 @@ import Home from "@/components/apps/home/home";
 
 const blog = (
   <div className="hidden sm:flex gap-2 absolute right-0">
-    <ModeToggle />
+    <ModeToggle variant="outline"/>
     <Link href="/blog">
       <Button variant="outline" className="cursor-pointer">
         <ScrollText />
         Blog
       </Button>
     </Link>
-    <Link href={siteConfig.links.github} >
-    <Button variant="outline" className="cursor-pointer">
-      <Github />
-      Github
-    </Button>
+    <Link href={siteConfig.links.github}>
+      <Button variant="outline" className="cursor-pointer">
+        <Github />
+        Github
+      </Button>
     </Link>
   </div>
 );
@@ -39,10 +39,10 @@ export default function Page() {
       <header id="header-section" className="bg-zinc-50 dark:bg-zinc-900">
         <section className="max-w-7xl mx-auto px-4">
           <div className="h-20 flex items-center gap-8 relative">
-            <div className=" relative top-[-30px]">
+            <div className="relative top-[-30px]">
               <Avatar className="w-28 h-28 text-large rounded-sm">
                 <AvatarImage src="logo/truffle.svg" />
-                <AvatarFallback>P</AvatarFallback>
+                <AvatarFallback>APL</AvatarFallback>
               </Avatar>
             </div>
             <div id="name">
@@ -58,7 +58,7 @@ export default function Page() {
       </header>
       <main id="content" className="max-w-7xl mx-auto px-6">
         <Home />
-        <Footer/>
+        <Footer />
       </main>
     </div>
   );

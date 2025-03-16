@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/context-menu"
 
 import { Album } from "@/components/data/albums"
-import { playlists } from "@/components/data/playlists"
+//import { playlists } from "@/components/data/playlists"
 
 interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
   album: Album
@@ -58,7 +58,7 @@ export function AlbumArtwork({
                 New Playlist
               </ContextMenuItem>
               <ContextMenuSeparator />
-              {playlists.map((playlist) => (
+              {/* {playlists.map((playlist) => (
                 <ContextMenuItem key={playlist}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ export function AlbumArtwork({
                   </svg>
                   {playlist}
                 </ContextMenuItem>
-              ))}
+              ))} */}
             </ContextMenuSubContent>
           </ContextMenuSub>
           <ContextMenuSeparator />

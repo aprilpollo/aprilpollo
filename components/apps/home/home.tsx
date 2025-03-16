@@ -27,19 +27,19 @@ export default function Home() {
           <div className="space-y-1 flex flex-col">
             <h4 className="text-medium font-bold">comEng 👍🏻•_•👍🏻</h4>
             <br />
-            <Label>
+            <Label className="flex items-center gap-1">
               <School className="size-4" />
               {siteConfig.title.university}
             </Label>
-            <Label>
+            <Label className="flex items-center gap-1">
               <MapPin className="size-4" />
               {siteConfig.title.location}
             </Label>
-            <Label>
+            <Label className="flex items-center gap-1">
               <Mail className="size-4" />
               {siteConfig.title.mail}
             </Label>
-            <Label>
+            <Label className="flex items-center gap-1">
               <Clock4 className="size-4" />
               {siteConfig.title.time}
             </Label>

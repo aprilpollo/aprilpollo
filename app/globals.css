@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
@@ -123,4 +124,21 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.bungee-shade {
+  font-family: "Bungee Shade", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sidebar{
+  min-height: calc(100vh - 41px);
+}
+.scroll-content{
+  height: calc(100vh - 41px);
+  
+}
+.sidebar-blog{
+  min-height: calc(100vh - 350px);
 }

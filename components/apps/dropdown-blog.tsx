@@ -1,11 +1,9 @@
 "use client";
-// import { useRouter } from "next/navigation";
+import Link from "next/link";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
@@ -13,22 +11,27 @@ import { siteConfig } from "@/config/site";
 import { ScrollText, Github, ChevronDown } from "lucide-react";
 
 export default function DropdownBlog() {
-  // const router = useRouter();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="sm:hidden flex text-xs font-bold text-default-500 items-center cursor-pointer">
-        {siteConfig.nickname}<ChevronDown/>
+        {siteConfig.nickname}
+        <ChevronDown />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
-        <DropdownMenuSeparator />
         <DropdownMenuItem className="cursor-pointer">
-          <ScrollText />
-          Blog
+          <Link href="/blog" className="w-full flex items-center gap-2.5">
+            <ScrollText />
+            Blog
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer">
-          <Github />
-          Github
+          <Link
+            href={siteConfig.links.github}
+            className="w-full flex items-center gap-2.5"
+          >
+            <Github />
+            Github
+          </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
