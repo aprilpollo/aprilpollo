@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -56,6 +58,8 @@ export default function RootLayout({
               </SidebarInset>
             </SidebarProvider>
         </ThemeProvider>
+        <Analytics/>
+        <SpeedInsights/>
       </body>
     </html>
   );
