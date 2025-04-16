@@ -2,7 +2,13 @@ import type { Metadata, Viewport } from "next";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { ThemeProvider } from "@/components/theme-provider";
-
+import { AppSidebar } from "@/components/app-sidebar";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+import { ModeToggle } from "@/components/mode-toggle";
 import clsx from "clsx";
 import "./globals.css";
 
@@ -39,8 +45,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-         
+            <SidebarProvider>
+              <AppSidebar />
+              <SidebarInset>
+                <header className="bg-background sticky top-0 z-50 flex h-12 shrink-0 items-center gap-2 border-b px-4">
+                  <SidebarTrigger className="-ml-1" />
+                  <ModeToggle variant="ghost" className="size-7" />
+                </header>
+                {children}
+              </SidebarInset>
+            </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -49,7 +49,7 @@ const work = [
 
 export default function AboutSection() {
   return (
-    <section id="about-section" className="my-10" >
+    <section id="about-section" className="bg-zinc-50 dark:bg-zinc-900 rounded-md p-4" >
       <div
         className="grid md:grid-cols-2 gap-10 pl-2 backdrop-blur-[4px] rounded-md"
         data-aos="zoom-in"
