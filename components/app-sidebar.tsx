@@ -34,7 +34,7 @@ const data = {
        {
         title: "Auth",
         isActive: false,
-        url: "#"
+        url: "/auth"
        }
       ],
     },
@@ -92,7 +92,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                             asChild
                             isActive={item.isActive}
                           >
-                            <a href={item.url}>{item.title}</a>
+                            <Link href={item.url}>{item.title}</Link>
                           </SidebarMenuSubButton>
                         </SidebarMenuSubItem>
                       ))}

@@ -1,18 +1,14 @@
-import type { Metadata, Viewport } from "next";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/react"
+import { RootProvider } from 'fumadocs-ui/provider';
+import { Metadata, Viewport } from "next";
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-import { ThemeProvider } from "@/components/theme-provider";
-import { AppSidebar } from "@/components/app-sidebar";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
-import { ModeToggle } from "@/components/mode-toggle";
-import clsx from "clsx";
-import "./globals.css";
+import { Inter } from 'next/font/google';
+import type { ReactNode } from 'react';
+import 'fumadocs-ui/style.css';
+import "../css/globals.css"
+
+const inter = Inter({
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -28,38 +24,17 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="th" suppressHydrationWarning>
+    <html lang="en" className={inter.className} suppressHydrationWarning>
       <body
-        className={clsx(
-          "min-h-screen font-sans antialiased bg-background",
-          fontSans.variable
-        )}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+        }}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-            <SidebarProvider>
-              <AppSidebar />
-              <SidebarInset>
-                <header className="bg-background sticky top-0 z-50 flex h-12 shrink-0 items-center gap-2 border-b px-4">
-                  <SidebarTrigger className="-ml-1" />
-                  <ModeToggle variant="ghost" className="size-7" />
-                </header>
-                {children}
-              </SidebarInset>
-            </SidebarProvider>
-        </ThemeProvider>
-        <Analytics/>
-        <SpeedInsights/>
+        <RootProvider>{children}</RootProvider>
       </body>
     </html>
   );

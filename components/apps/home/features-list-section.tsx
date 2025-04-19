@@ -34,7 +34,7 @@ export default function FeaturesListSection() {
   ];
 
   return (
-    <section id="features-list-section" className="relative bg-zinc-50 dark:bg-zinc-900 rounded-md p-4" >
+    <article id="features-list-section" className="relative bg-zinc-50 dark:bg-zinc-900 rounded-md p-4" >
       {/* <DotPattern
         className={cn(
           "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
@@ -61,6 +61,6 @@ export default function FeaturesListSection() {
           </Card>
         ))}
       </div>
-    </section>
+    </article>
   );
 }

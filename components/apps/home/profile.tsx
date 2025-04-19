@@ -1,3 +1,4 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
@@ -11,8 +12,7 @@ import {
   Clock4,
   School,
 } from "lucide-react";
-import { ScrollText, Github } from "lucide-react";
-import { User } from "@heroui/react";
+import { Github, ScrollText } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Footer } from "@/components/footer";
 import { BgInteractiveGridPattern } from "@/components/bg-grid-pattern";
@@ -25,26 +25,24 @@ import CtaSection from "./cta-section";
 
 export default function Profile() {
   return (
-    <section id="profile">
-     <div className="px-[1px]">
-     <BgInteractiveGridPattern />
-     </div>
-      {/* <Image src="bg/13.png"/> */}
+    <main id="profile">
+      <div className="px-[1px]">
+        <BgInteractiveGridPattern />
+      </div>
       <header className="h-14 bg-zinc-50 dark:bg-zinc-900 flex items-center justify-between rounded-b-md sm:px-32 px-10">
-        <User
-          avatarProps={{
-            src: "/truffle.png",
-            size: "lg",
-            isBordered: true,
-            color: "secondary",
-            className: "top-[-8px] z-[99]",
-          }}
-          description={siteConfig.nickname}
-          name={siteConfig.name}
-        />
-        {blog}
+        <div className="flex gap-2">
+          <Avatar className="size-16 top-[-10px] border-2 p-0.5">
+            <AvatarImage src="/truffle.png" className="rounded-full" />
+            <AvatarFallback>AP</AvatarFallback>
+          </Avatar>
+          <div className="flex flex-col justify-center">
+            <h1 className="text-sm font-medium">{siteConfig.name}</h1>
+            <h2 className="text-xs font-medium text-muted-foreground">{siteConfig.nickname}</h2>
+          </div>
+        </div>
+        {NavGithub}
       </header>
-      <main className="py-5 flex flex-col gap-5">
+      <section className="py-5 flex flex-col gap-5">
         <div className="flex gap-5">
           {contect}
           <HeaderSection />
@@ -53,17 +51,17 @@ export default function Profile() {
         <FeaturesListSection />
         <CtaSection />
         <Footer />
-      </main>
-    </section>
+      </section>
+    </main>
   );
 }
 
-const blog = (
+const NavGithub = (
   <div className="hidden sm:flex gap-2">
-    <Link href="/blog">
+    <Link href="/docs">
       <Button variant="outline" className="cursor-pointer" size="sm">
         <ScrollText />
-        Blog
+        Docs
       </Button>
     </Link>
     <Link href={siteConfig.links.github}>

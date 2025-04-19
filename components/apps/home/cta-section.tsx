@@ -3,7 +3,7 @@ import { title } from "@/config/primitives";
 import { ModelSendme } from "./model-sendme";
 export default function CtaSection() {
   return (
-    <section
+    <article
       id="cta-section"
       className="cta-section flex flex-wrap justify-between items-center bg-zinc-50 dark:bg-zinc-900 rounded-md p-4"
 
@@ -20,6 +20,6 @@ export default function CtaSection() {
         </p>
       </div>
       <ModelSendme />
-    </section>
+    </article>
   );
 }

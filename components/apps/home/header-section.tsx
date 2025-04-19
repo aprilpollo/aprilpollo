@@ -4,7 +4,7 @@ import { AuroraText } from "@/components/magicui/aurora-text";
 
 export default function HeaderSection() {
   return (
-    <section id="header-section" className="bg-zinc-50 dark:bg-zinc-900 flex-1 p-4 rounded-md">
+    <article id="header-section" className="bg-zinc-50 dark:bg-zinc-900 flex-1 p-4 rounded-md">
       <div
         className="flex flex-col justify-center"
         data-aos="fade-right"
@@ -20,6 +20,6 @@ export default function HeaderSection() {
           Software Developer
         </span>
       </div>
-    </section>
+    </article>
   );
 }
