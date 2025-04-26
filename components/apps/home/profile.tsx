@@ -58,10 +58,10 @@ export default function Profile() {
 
 const NavGithub = (
   <div className="hidden sm:flex gap-2">
-    <Link href="/docs">
+    <Link href="/blog">
       <Button variant="outline" className="cursor-pointer" size="sm">
         <ScrollText />
-        Docs
+        Blog
       </Button>
     </Link>
     <Link href={siteConfig.links.github}>

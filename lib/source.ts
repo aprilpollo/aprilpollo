@@ -1,9 +1,8 @@
-import { docs } from '@/.source';
 import { loader } from 'fumadocs-core/source';
-import { i18n } from '@/lib/i18n';
+import { blog as blogPosts } from '@/.source';
 
-export const source = loader({
-  // i18n,
-  baseUrl: '/docs',
-  source: docs.toFumadocsSource(),
+
+export const blog = loader({
+  baseUrl: '/blog',
+  source: blogPosts.toFumadocsSource(),
 });

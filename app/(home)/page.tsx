@@ -1,4 +1,3 @@
-
 import Profile from "@/components/apps/home/profile";
 
 export default function HomePage() {

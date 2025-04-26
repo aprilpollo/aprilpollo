@@ -1,13 +1,13 @@
-import { RootProvider } from 'fumadocs-ui/provider';
+import { RootProvider } from "fumadocs-ui/provider";
 import { Metadata, Viewport } from "next";
 import { siteConfig } from "@/config/site";
-import { Inter } from 'next/font/google';
-import type { ReactNode } from 'react';
-import 'fumadocs-ui/style.css';
-import "../css/globals.css"
+import { Inter } from "next/font/google";
+import type { ReactNode } from "react";
+import "fumadocs-ui/style.css";
+import "../css/globals.css";
 
 const inter = Inter({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -27,13 +27,7 @@ export const viewport: Viewport = {
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
-      <body
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          minHeight: '100vh',
-        }}
-      >
+      <body className="bg-background ">
         <RootProvider>{children}</RootProvider>
       </body>
     </html>
