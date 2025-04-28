@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   const posts = blog.getPages();
-
   return (
     <>
       <div className="relative p-8 md:p-12 flex h-[250px] md:h-[400px] w-full flex-col overflow-hidden rounded-sm border-b">

@@ -13,6 +13,5 @@ export const baseOptions: BaseLayoutProps = {
         {siteConfig.titleweb}
       </>
     ),
-   
   },
 };

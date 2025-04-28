@@ -1,0 +1,157 @@
+---
+title: "REST API"
+description: "ศาสตร์แห่งการทำ REST API แบบ Pro"
+---
+
+# REST API คืออะไร?
+REST API หรือ `Representational State Transfer Application Programming Interface` เป็นสถาปัตยกรรมที่ใช้ในการสร้างบริการเว็บ (Web Services) ที่สามารถสื่อสารกันได้ผ่าน HTTP โดย REST API จะใช้หลักการของ REST ซึ่งเป็นแนวทางในการออกแบบระบบที่เน้นการใช้ทรัพยากร (Resources) และการทำงานกับทรัพยากรเหล่านั้นผ่าน HTTP methods เช่น GET, POST, PUT, DELETE เป็นต้น
+REST API เป็นที่นิยมในวงการพัฒนาแอปพลิเคชันเนื่องจากมีความเรียบง่าย ยืดหยุ่น และสามารถทำงานได้กับหลายแพลตฟอร์มและภาษาโปรแกรม
+
+![Image](https://voyager.postman.com/illustration/diagram-what-is-an-api-postman-illustration.svg)
+[Postman](https://www.postman.com/what-is-an-api/)
+
+REST API ถูกพัฒนาโดย Roy Fielding ในปี 2000 ในเอกสารที่ชื่อว่า "Architectural Styles and the Design of Network-based Software Architectures" ซึ่งเป็นส่วนหนึ่งของการศึกษาในระดับปริญญาเอกของเขา โดยมีวัตถุประสงค์เพื่อสร้างแนวทางในการออกแบบระบบที่สามารถสื่อสารกันได้อย่างมีประสิทธิภาพและยืดหยุ่น
+ต่อมาในปี 2004 REST API ได้รับความนิยมมากขึ้นเมื่อมีการนำไปใช้ในบริการเว็บต่างๆ เช่น Amazon Web Services (AWS), Google APIs, และ Facebook Graph API ซึ่งทำให้ REST API กลายเป็นมาตรฐานในการพัฒนา Web Services ในปัจจุบัน
+
+----
+
+# ทำความรู้จักกับส่วนประกอบหลักของ REST API
+## 1. Resource
+Resource คือข้อมูลหรือทรัพยากรที่เราต้องการให้บริการผ่าน API โดย Resource จะถูกแทนที่ด้วย URL (Uniform Resource Locator) เช่น `https://api.example.com/users` ซึ่งหมายถึงข้อมูลของผู้ใช้ในระบบ
+Resource สามารถเป็นได้ทั้งข้อมูลที่เป็น JSON, XML หรือรูปภาพ เป็นต้น
+## 2. HTTP Methods
+HTTP Methods คือวิธีการที่ใช้ในการทำงานกับ Resource โดยมีหลักๆ 4 วิธี ได้แก่
+- **GET** ใช้ในการดึงข้อมูลจาก Resource
+- **POST** ใช้ในการสร้าง Resource ใหม่
+- **PUT** ใช้ในการอัปเดต Resource ที่มีอยู่แล้ว
+- **DELETE** ใช้ในการลบ Resource
+## 3. Status Codes
+Status Codes คือรหัสที่ใช้ในการบอกสถานะของการทำงานของ API โดยมีรหัสหลักๆ ได้แก่
+- **200 OK** การทำงานสำเร็จ
+- **201 Created** Resource ถูกสร้างขึ้นสำเร็จ
+- **204 No Content** การทำงานสำเร็จ แต่ไม่มีข้อมูลส่งกลับ
+- **400 Bad Request** ข้อผิดพลาดจากการร้องขอของผู้ใช้
+- **401 Unauthorized** ผู้ใช้ไม่มีสิทธิ์เข้าถึง Resource
+- **404 Not Found** Resource ที่ร้องขอไม่พบ
+- **500 Internal Server Error** ข้อผิดพลาดภายในเซิร์ฟเวอร์
+## 4. Headers
+Headers คือข้อมูลเพิ่มเติมที่ส่งไปพร้อมกับการร้องขอหรือการตอบกลับ API โดย Headers สามารถใช้ในการระบุประเภทของข้อมูล (Content-Type), การอนุญาต (Authorization), และข้อมูลอื่นๆ ที่เกี่ยวข้องกับการทำงานของ API
+## 5. Body
+Body คือข้อมูลที่ส่งไปพร้อมกับการร้องขอหรือการตอบกลับ API โดย Body จะใช้ในการส่งข้อมูลที่ต้องการสร้างหรืออัปเดต Resource เช่น ข้อมูลผู้ใช้ใหม่ในรูปแบบ JSON
+
+----
+
+# การออกแบบ REST API ที่ดี
+## Resource-Driven Design
+ทุกอย่างคือ “Resource” (ทรัพยากร) เช่น users, products, orders และ URL ต้องสื่อถึง Resource ชัดเจน
+``` http
+GET /users/123
+POST /orders
+PUT /products/99
+DELETE /comments/888
+```
+หลีกเลี่ยงการใส่ verb ใน path เช่น /getUser, /createOrder → ผิดหลัก REST
+
+## ใช้ HTTP Method อย่างถูกต้อง
+- **GET** → ดึงข้อมูล
+- **POST** → สร้างใหม่
+- **PUT** → แก้ไข (ทั้งก้อน)
+- **PATCH** → แก้ไขบางส่วน
+- **DELETE** → ลบ
+
+<Callout type="warn" title="Warning">
+อย่าทำ API ที่ใช้ GET แต่เปลี่ยนแปลงข้อมูลเด็ดขาด (เช่น GET /deleteUser/5)
+</Callout>
+
+## HTTP Status Code ต้องสื่อสารชัดเจน
+- **200** OK → สำเร็จ
+- **201** Created → สร้างใหม่สำเร็จ
+- **204** No Content → ลบสำเร็จ (ไม่มี body)
+- **400** Bad Request → ส่งข้อมูลผิด
+- **401** Unauthorized → ต้อง Login
+- **403** Forbidden → ไม่มีสิทธิ์
+- **404** Not Found → ไม่พบข้อมูล
+- **422** Unprocessable Entity → Validate แล้วข้อมูลผิด
+- **500** Internal Server Error → ระบบพัง (อย่าใช้พร่ำเพรื่อ)
+
+<Callout title="Tip">
+เวลาผิด ส่งข้อความ Error ชัด ๆ พร้อม Code ที่ frontend อ่านได้
+</Callout>
+
+## Versioning อย่างมีระบบ
+อย่าเปลี่ยน API โดยไม่แจ้ง วิธีนิยมเช่น
+``` http
+GET /api/v1/users
+```
+หรือ version ผ่าน Header (Accept: application/vnd.api.v1+json)<br/>**ทำไม?** เพราะเมื่อมีคนใช้ production แล้ว เราจะเปลี่ยน API ได้อย่างปลอดภัย
+
+## ออกแบบ Request และ Response ให้เป็น Standard
+### Request [!toc]
+- ใช้ JSON เป็นหลัก
+- ชัดเจนว่า field ไหนบังคับ field ไหน optional
+- Validate ที่ฝั่ง server ด้วย
+
+### Response
+โครงสร้างควรเหมือนกันเสมอ เช่น
+``` json title="json"
+{
+  "success": true,
+  "data": {
+    "id": 123,
+    "name": "John Doe"
+  },
+  "error": null
+}
+```
+หรือถ้า error
+``` json title="json"
+{
+  "success": false,
+  "data": null,
+  "error": {
+    "code": "USER_NOT_FOUND",
+    "message": "User not found."
+  }
+}
+```
+อย่า Response แปลก ๆ เช่นส่ง Array โดด ๆ ออกมา
+
+## Security ต้องมาเป็น Priority แรก
+- ทุก API สำคัญต้องมี Authentication (JWT, OAuth2, etc.)
+- Authorization (Permission, Role-based Access)
+- Validate ข้อมูลป้องกัน Injection
+- จำกัด Rate Limit ต่อ IP (Throttle)
+- พยายามไม่คืนข้อมูลที่ไม่จำเป็น (เช่น password hash)
+
+<Callout title="Tip">
+อย่า Error แบบหลุด SQL query หรือ Stacktrace
+</Callout>
+
+## Pagination, Filtering, และ Sorting เป็นมาตรฐาน
+- เวลา GET /users ต้องรองรับ:
+- ?page=2&limit=10
+- ?sort=created_at.desc
+- ?filter[status]=active
+
+อย่าให้ list ทั้งหมดโดยไม่มี pagination เด็ดขาด (ระบบจะพังเวลา scale)
+
+## Logging และ Monitoring
+- Log request/response เฉพาะ Metadata (ไม่ log password หรือข้อมูล sensitive)
+- มีระบบ track error เช่น Sentry, Datadog
+- มี Health Check API (/healthz) ไว้ให้ระบบ Monitoring เช็ค
+
+## คิดเรื่อง Scalability ตั้งแต่ต้น
+- อย่าเขียน SQL query แบบ N+1 (ยิง query ซ้ำ)
+- ทำ caching ถ้า request ซ้ำ ๆ (เช่น Redis)
+- ถ้า file ใหญ่ หรือ export ใช้ background job แล้วแจ้งผ่าน notification
+- แยก Layer ของ API: Controller → Service → Repository
+
+## Bonus
+- Idempotency: PUT และ DELETE ต้อง idempotent (กี่รอบก็ผลเหมือนกัน)
+- HATEOAS: Response สามารถส่ง “link” ต่อไปได้ เช่น "next": "/api/v1/users?page=2"
+- Rate Limit Header: ส่ง Header กลับไปบอก frontend ว่าใช้ limit ไปเท่าไรแล้ว
+- Graceful Error Handling: แม้ระบบพัง ก็ต้องส่ง Response สวย ๆ กลับไป ไม่ใช่ 500 หน้าเว็บ error
+
+สรุปใจความสั้น ๆ<br/>
+คิดแทนคนใช้ และ ทำ API ที่มีความเสถียร, เข้าใจง่าย, รองรับการขยายในอนาคต
+แล้วเขียนโค้ดแบบที่ใครมาอ่านต่อก็เข้าใจได้ง่ายด้วย
