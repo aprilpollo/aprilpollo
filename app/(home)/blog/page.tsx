@@ -1,7 +1,6 @@
 import { blog } from "@/lib/source";
 import Link from "next/link";
 import { Metadata } from "next";
-import { Meteors } from "@/components/magicui/meteors";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -14,8 +13,7 @@ export default function BlogPage() {
   const posts = blog.getPages();
   return (
     <>
-      <div className="relative p-8 md:p-12 flex h-[250px] md:h-[400px] w-full flex-col overflow-hidden rounded-sm border-b">
-        <Meteors number={30} />
+      <div className="relative p-8 md:p-12 flex h-[250px] md:h-[400px] w-full flex-col overflow-hidden rounded-sm">
         <div className="container max-sm:px-0 md:py-12">
           <AuroraText
             speed={1}

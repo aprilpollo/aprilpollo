@@ -1,5 +1,6 @@
-import { Badge } from "@/components/ui/badge";
+
 import { HackathonCard } from "@/components/hackathon-card";
+import {Chip} from "@heroui/react";
 
 const educational = [
   {
@@ -7,7 +8,7 @@ const educational = [
     dates: "2021 - 2022",
     location: "Sripatum University",
     description:
-      "Learn to design, analyze, and test vehicles, manage production systems, and operate automotive-related equipment like engines.",
+      "เรียนรู้การออกแบบ วิเคราะห์ และทดสอบยานพาหนะ จัดการระบบการผลิต และใช้งานอุปกรณ์ที่เกี่ยวข้องกับยานยนต์",
     image: "logo/logo2.svg",
     mlh: "https://www.spu.ac.th/fac/engineer/programs/next-generation-automotive-engineering-1",
     links: [],
@@ -17,7 +18,7 @@ const educational = [
     dates: "2022 - 2025",
     location: "Sripatum University",
     description:
-      "Learn to design computer systems, including both hardware and software, for use in various information processing operations.",
+      "เรียนรู้การออกแบบระบบคอมพิวเตอร์ ทั้งฮาร์ดแวร์และซอฟต์แวร์ เพื่อใช้ในกระบวนการประมวลผลข้อมูลต่างๆ",
     image: "logo/logo1.svg",
     mlh: "https://www.spu.ac.th/fac/informatics/programs/computer-engineering",
     links: [],
@@ -30,7 +31,7 @@ const work = [
     dates: "2021 - 2024",
     location: "Somsin Service Limited Partnership",
     description:
-      "Management and Maintenance of Electronic Server Networks (ATM)",
+      "การจัดการและบำรุงรักษาเครือข่ายเซิร์ฟเวอร์อิเล็กทรอนิกส์ (ATM)",
     image: "logo/logo3.svg",
     mlh: "#",
     links: [],
@@ -40,7 +41,7 @@ const work = [
     dates: "2025",
     location: "T.A.I. Solution Service Co., Ltd.",
     description:
-      "Design system architecture, create flowcharts for each workflow, develop and test APIs, and manage databases.",
+      "ออกแบบสถาปัตยกรรมระบบ สร้าง flowcharts สำหรับแต่ละขั้นตอนการทำงาน พัฒนาและทดสอบ API และจัด databases",
     image: "https://taisolution.tech/assets/pictures/logo_normal-1.png",
     mlh: "https://taisolution.tech/",
     links: [],
@@ -49,14 +50,13 @@ const work = [
 
 export default function AboutSection() {
   return (
-    <article id="about-section" className="bg-zinc-50 dark:bg-zinc-900 rounded-md p-4" >
+    <article className="p-6" >
       <div
-        className="grid md:grid-cols-2 gap-10 pl-2 backdrop-blur-[4px] rounded-md"
-        data-aos="zoom-in"
-        data-aos-delay="100"
+        className="grid md:grid-cols-1 gap-10 pl-2 backdrop-blur-[4px] rounded-md"
+        
       >
         <div className="flex flex-col gap-4">
-          <Badge>Educational</Badge>
+          <Chip variant="dot" radius="sm">Educational</Chip>
           <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
             {educational.map((project, id) => (
               <HackathonCard
@@ -72,7 +72,7 @@ export default function AboutSection() {
           </ul>
         </div>
         <div className="flex flex-col gap-4">
-          <Badge>Work</Badge>
+          <Chip variant="dot" radius="sm">Work</Chip>
           <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
             {work.map((project, id) => (
               <HackathonCard

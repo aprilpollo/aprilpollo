@@ -5,7 +5,7 @@ import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pa
 
 export function BgInteractiveGridPattern() {
   return (
-    <div className="relative flex h-48 sm:h-56 md:h-64 lg:h-96 w-full flex-col items-center justify-center overflow-hidden border-x bg-background">
+    <div className="relative flex h-48 sm:h-56 md:h-64 lg:h-96 w-full flex-col items-center justify-center overflow-hidden border-x border-t rounded-t-md bg-background">
       <InteractiveGridPattern
         className={cn(
           "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",

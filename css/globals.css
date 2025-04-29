@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 
 @import "tailwindcss";
-@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/ocean.css";
 @import "fumadocs-ui/css/preset.css";
+
+@config "../tailwind.config.js";
 
 @custom-variant dark (&:is(.dark *));
 

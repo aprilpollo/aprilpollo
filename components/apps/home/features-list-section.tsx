@@ -1,4 +1,4 @@
-import { Network, BicepsFlexed, GalleryVerticalEnd } from "lucide-react";
+import { Network, LayoutTemplate, GalleryVerticalEnd } from "lucide-react";
 import {
   Card,
   CardDescription,
@@ -15,38 +15,37 @@ export default function FeaturesListSection() {
   const data = [
     {
       icon: <Network />,
-      title: "Implemented a robust API",
+      title: "Robust API Development",
       description:
-        "Developed a high-performance and secure API for social media platforms and enterprises using Go Fiber, Fast API, andPostgreSQL.",
+        "สร้างและพัฒนา API ประสิทธิภาพสำหรับแพลตฟอร์มโซเชียลมีเดียและองค์กรขนาด โดยใช้ Go Fiber, FastAPI และ PostgreSQL",
     },
     {
-      icon: <BicepsFlexed />,
-      title: "Skill Sets",
+      icon:<LayoutTemplate />,
+      title: "Modern Web Application Development",
       description:
-        "Designing and developing cutting-edge web applications tailored to meet your business needs with modern frameworks and technologies.",
+        "สร้างสรรค์เว็บแอปพลิเคชันที่ตอบโจทย์ความต้องการทางธุรกิจ ด้วยเฟรมเวิร์กและเทคโนโลยีใหม่ๆ",
     },
     {
       icon: <GalleryVerticalEnd />,
       title: "Professional Background",
       description:
-        "3+ years of experience in full-stack development, focusing on delivering practical and scalable solutions.",
+        "ประสบการณ์กว่า 3 ปีในสายงานพัฒนา Full-Stack เชี่ยวชาญในการพัฒนาโซลูชันที่ใช้งานได้จริงและสามารถขยายระบบได้อย่างมีประสิทธิภาพ",
     },
   ];
 
   return (
-    <article id="features-list-section" className="relative bg-zinc-50 dark:bg-zinc-900 rounded-md p-4" >
+    <article id="features-list-section" className="relative p-4" >
       {/* <DotPattern
         className={cn(
           "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
         )}
       /> */}
-      <div className="flex flex-col md:w-2/3 w-full ">
-        <h2 className={title()}>My</h2>
-        <h2 className={title({ color: "cyan" })}>Expertise & Achievements</h2>
-        <p className={subtitle()}>
-          Discover my portfolio highlights, professional background, and key
-          skill sets that showcase my capabilities and expertise.
-        </p>
+      <div className="flex flex-col md:w-2/3 w-full mb-10">
+        <span className={title()}>My  <span className={title({ color: "cyan" })}>Expertise</span></span>
+       
+        {/* <p className={subtitle()}>
+        สำรวจผลงาน ประสบการณ์ และทักษะที่แสดงถึงศักยภาพและความเชี่ยวชาญของฉัน
+        </p> */}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         {data.map((item, index) => (

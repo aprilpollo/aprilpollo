@@ -3,12 +3,10 @@ import { blog } from "@/lib/source";
 // import { getPageTreePeers } from "fumadocs-core/server";
 import { InlineTOC } from "fumadocs-ui/components/inline-toc";
 import { notFound } from "next/navigation";
-import { Meteors } from "@/components/magicui/meteors";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { siteConfig } from "@/config/site";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 // import { Cards, Card } from "fumadocs-ui/components/card";
@@ -29,8 +27,7 @@ export default async function page(props: {
 
   return (
     <>
-      <div className="relative p-8 md:p-12 flex h-[250px] md:h-[400px] w-full flex-col overflow-hidden rounded-sm border-b">
-        <Meteors number={30} />
+      <div className="relative p-8 md:p-12 flex h-[250px] md:h-[400px] w-full flex-col overflow-hidden rounded-sm ">
         <div className="container max-sm:px-0 md:py-12 z-10">
           <TextAnimate className="uppercase mb-2 max-w-max pb-2 text-4xl font-bold md:text-5xl border-dashed border-b-4 border-fd-muted-foreground">
             {page.data.title}
@@ -74,9 +71,9 @@ export default async function page(props: {
         </div>
       </article>
       {/* {page.data. ? <DocsCategory url={page.url} /> : null} */}
-      <div className="container px-4 py-8">
+      {/* <div className="container px-4 py-8">
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 }

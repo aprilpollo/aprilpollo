@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
+// import { Separator } from "@/components/ui/separator";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 // import { ModeToggle } from "./mode-toggle";
 import { siteConfig } from "@/config/site";
@@ -8,7 +8,7 @@ import { siteConfig } from "@/config/site";
 export function Footer() {
   return (
     <footer id="footer">
-      <Separator />
+      {/* <Separator /> */}
       <div className="flex justify-between pt-5 pb-12">
         <div className="flex gap-2">
           <span className="text-default-600 text-xs">© 2025</span>

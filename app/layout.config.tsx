@@ -3,6 +3,7 @@ import { GiCurlyWing } from "react-icons/gi";
 import { siteConfig } from "@/config/site";
 
 export const baseOptions: BaseLayoutProps = {
+  githubUrl:"https://github.com/phonsing-Hub/aprilpollo",
   nav: {
     // component: <div className="border"> Nav</div>
     title: (
@@ -14,4 +15,5 @@ export const baseOptions: BaseLayoutProps = {
       </>
     ),
   },
+  children: <div >testt</div>,
 };
