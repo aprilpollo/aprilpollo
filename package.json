@@ -1,6 +1,6 @@
 {
-  "name": "fumadocs-ui-template",
-  "version": "0.0.0",
+  "name": "aprilpollo",
+  "version": "0.9.1",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -49,7 +49,6 @@
     "fumadocs-twoslash": "^3.1.1",
     "fumadocs-typescript": "^4.0.3",
     "fumadocs-ui": "15.2.8",
-    "fumadocs-ui-template": ".",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.487.0",
     "motion": "^12.9.2",
