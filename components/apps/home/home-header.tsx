@@ -10,7 +10,7 @@ import Link from "next/link";
 
 function HomeHeader() {
   return (
-    <div className="container mx-auto rounded-md grid grid-cols-1 lg:grid-cols-5 border gap-4 bg-background">
+    <div className="container mx-auto rounded-md grid grid-cols-1 md:grid-cols-5 border gap-4 bg-background">
       <div className="col-span-2 flex items-center justify-center">
         <Image src="/truffle.png" alt="truffle" width={350} isBlurred />
       </div>
