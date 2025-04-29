@@ -36,6 +36,7 @@
     "@tanstack/react-table": "^8.21.2",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
+
     "axios": "^1.8.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -77,7 +78,6 @@
     "@types/react-dom": "^19.1.2",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.4",
     "typescript": "^5.8.3"
   }
 }

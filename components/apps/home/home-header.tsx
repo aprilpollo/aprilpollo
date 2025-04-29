@@ -14,7 +14,7 @@ function HomeHeader() {
       <div className="col-span-2 flex items-center justify-center">
         <Image src="/truffle.png" alt="truffle" width={350} isBlurred />
       </div>
-      <div className="col-span-3 flex flex-col justify-center items-center lg:items-start p-4 mb-6">
+      <div className="col-span-3 flex flex-col justify-center items-center md:items-start p-4 mb-6">
         <TextAnimate className="uppercase mb-2 max-w-max pb-2 text-4xl font-bold md:text-5xl border-dashed border-b-4 border-fd-muted-foreground">
           Polsing Taleman
         </TextAnimate>
