@@ -53,7 +53,6 @@
     "motion": "^12.9.2",
     "next": "15.3.1",
     "next-themes": "^0.4.6",
-    "postcss": "^8.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.55.0",
@@ -76,6 +75,9 @@
     "@types/node": "22.14.1",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.4",
     "typescript": "^5.8.3"
   }
 }
