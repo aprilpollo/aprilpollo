@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 
 
-import { title, subtitle } from "@/config/primitives";
+import { title } from "@/config/primitives";
 
 // import { DotPattern } from "../ui/dot-pattern";
 

@@ -7,6 +7,6 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ...defaultMdxComponents,
     ...components,
     Tab,
-    Tabs,
+    Tabs
   };
 }

@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
-// import { Separator } from "@/components/ui/separator";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
-// import { ModeToggle } from "./mode-toggle";
 import { siteConfig } from "@/config/site";
+import FadeIn from "./FadeIn";
 
 export function Footer() {
   return (
-    <footer id="footer">
+    <FadeIn >
+    <footer id="footer" className=" container">
       {/* <Separator /> */}
       <div className="flex justify-between pt-5 pb-12">
         <div className="flex gap-2">
@@ -43,6 +43,7 @@ export function Footer() {
         </div>
       </div>
     </footer>
+    </FadeIn>
   );
 }
 

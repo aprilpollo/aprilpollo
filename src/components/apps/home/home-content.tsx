@@ -7,7 +7,7 @@ import CtaSection from "./cta-section";
 
 function HomeContent() {
   return (
-    <div className="container mx-auto border rounded-md relative top-[-5px] inset-shadow-2xs bg-background">
+    <div className="container mx-auto border rounded-md relative top-[-10px] inset-shadow-2xs bg-background">
       <Tabs aria-label="Options" variant="underlined" size="sm" radius="sm">
         <Tab
           key="story"
@@ -18,7 +18,9 @@ function HomeContent() {
             </div>
           }
         >
-          <AboutSection />
+          <div className="min-h-96">
+            <AboutSection />
+          </div>
         </Tab>
         <Tab
           key="skills"
@@ -29,7 +31,10 @@ function HomeContent() {
             </div>
           }
         >
-          <FeaturesListSection />
+          {" "}
+          <div className="min-h-96">
+            <FeaturesListSection />
+          </div>
         </Tab>
         <Tab
           key="contact"
@@ -40,7 +45,9 @@ function HomeContent() {
             </div>
           }
         >
-          <CtaSection />
+          <div className="min-h-96">
+            <CtaSection />
+          </div>
         </Tab>
       </Tabs>
     </div>

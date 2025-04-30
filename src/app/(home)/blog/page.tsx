@@ -6,14 +6,15 @@ import { AuroraText } from "@/components/magicui/aurora-text";
 import { BlurFade } from "@/components/magicui/blur-fade";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "blog"
 };
+
 
 export default function BlogPage() {
   const posts = blog.getPages();
   return (
     <>
-      <div className="relative p-8 md:p-12 flex h-[250px] md:h-[400px] w-full flex-col overflow-hidden rounded-sm">
+      <div className="relative p-8 md:p-12 flex h-[250px] md:h-[400px] w-full flex-col overflow-hidden rounded-sm border-b">
         <div className="container max-sm:px-0 md:py-12">
           <AuroraText
             speed={1}
