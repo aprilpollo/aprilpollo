@@ -1,6 +1,5 @@
-
 import { HackathonCard } from "@/components/hackathon-card";
-import {Chip} from "@heroui/react";
+import { Chip } from "@heroui/chip";
 
 const educational = [
   {
@@ -50,13 +49,12 @@ const work = [
 
 export default function AboutSection() {
   return (
-    <article className="p-6" >
-      <div
-        className="grid md:grid-cols-1 gap-10 pl-2 backdrop-blur-[4px] rounded-md"
-        
-      >
+    <article className="">
+      <div className="grid md:grid-cols-1 gap-10  backdrop-blur-[4px] rounded-md">
         <div className="flex flex-col gap-4">
-          <Chip variant="dot" radius="sm">Educational</Chip>
+          <Chip variant="dot" radius="sm" size="sm" color="primary">
+            Educational
+          </Chip>
           <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
             {educational.map((project, id) => (
               <HackathonCard
@@ -72,7 +70,9 @@ export default function AboutSection() {
           </ul>
         </div>
         <div className="flex flex-col gap-4">
-          <Chip variant="dot" radius="sm">Work</Chip>
+          <Chip variant="dot" radius="sm" size="sm" color="success">
+            Work
+          </Chip>
           <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
             {work.map((project, id) => (
               <HackathonCard

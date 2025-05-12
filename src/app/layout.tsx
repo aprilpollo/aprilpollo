@@ -1,38 +1,54 @@
 import "./global.css";
-import { RootProvider } from "fumadocs-ui/provider";
-import { Inter } from "next/font/google";
+import clsx from "clsx";
 import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
+import { RootProvider } from "fumadocs-ui/provider";
+import { Providers } from "@/components/heroui/providers";
 import { siteConfig } from "@/config/site";
-import { Meteors } from "@/components/magicui/meteors";
-
-// import { MeteorDemo } from '@/components/bg-meteors';
-// import { fontSans } from "@/config/fonts";
-import { Footer } from "@/components/footer";
-
-const inter = Inter({
-  subsets: ["latin"],
-});
+import { fontSans } from "@/config/fonts";
+import { SearchProvider } from "@/components/searchProvider";
+import CustomSearchDialog from "@/components/search";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: {
     default: siteConfig.titleweb,
-    template: `${siteConfig.titleweb} | %s`,
+    template: `%s | ${siteConfig.titleweb}`,
+  },
+  description: siteConfig.titlewebdescription,
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="th" className={inter.className} suppressHydrationWarning>
-      <body className="flex flex-col">
-        <RootProvider>
-          <Meteors number={30} />
-          <div className="z-10 rootbody">{children}</div>
-        </RootProvider>
-        <Footer />
+    <html lang="th" suppressHydrationWarning>
+      <head />
+      <body
+        className={clsx(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
+        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+          <RootProvider>
+            <SearchProvider>
+              <CustomSearchDialog />
+              {children}
+            </SearchProvider>
+          </RootProvider>
+          <Footer />
+        </Providers>
         <Analytics />
         <SpeedInsights />
       </body>

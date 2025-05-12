@@ -1,7 +1,7 @@
 "use client";
 // import { AuroraText } from "@/components/magicui/aurora-text";
 import { Button } from "@/components/ui/button";
-import { Image } from "@heroui/react";
+// import { Image } from "@heroui/react";
 import { siteConfig } from "@/config/site";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { Label } from "@/components/ui/label";
@@ -10,11 +10,10 @@ import Link from "next/link";
 
 function HomeHeader() {
   return (
-    <div className="container mx-auto rounded-md grid grid-cols-1 md:grid-cols-5 border gap-4 bg-background">
-      <div className="col-span-2 flex items-center justify-center">
-        <Image src="/truffle.png" alt="truffle" width={350} isBlurred />
-      </div>
-      <div className="col-span-3 flex flex-col justify-center items-center md:items-start p-4 mb-6">
+    <div id="homeheader" 
+    className="relative p-8 md:p-12 flex min-h-[250px] md:h-[400px] w-full flex-col bg-[url('/bg/11.png')] bg-cover bg-center bg-no-repeat after:absolute after:inset-0 after:bg-black/5">
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/75 to-transparent z-0" />
+      <div className="container flex flex-col max-sm:px-0 md:py-12 z-10">
         <TextAnimate className="uppercase mb-2 max-w-max pb-2 text-4xl font-bold md:text-5xl border-dashed border-b-4 border-fd-muted-foreground">
           Polsing Taleman
         </TextAnimate>

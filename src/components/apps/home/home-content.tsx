@@ -7,7 +7,7 @@ import CtaSection from "./cta-section";
 
 function HomeContent() {
   return (
-    <div className="container mx-auto border rounded-md relative top-[-10px] inset-shadow-2xs bg-background">
+    <div className="mx-auto container relative bg-background">
       <Tabs aria-label="Options" variant="underlined" size="sm" radius="sm">
         <Tab
           key="story"

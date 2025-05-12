@@ -1,50 +1,39 @@
 "use client";
-import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
-import { siteConfig } from "@/config/site";
+
+import { siteConfig as config } from "@/config/site";
+import { Avatar } from "@heroui/avatar";
+import { Link } from "@heroui/link";
 import FadeIn from "./FadeIn";
 
-export function Footer() {
+export default function Footer() {
   return (
-    <FadeIn >
-    <footer id="footer" className=" container">
-      {/* <Separator /> */}
-      <div className="flex justify-between pt-5 pb-12">
-        <div className="flex gap-2">
-          <span className="text-default-600 text-xs">© 2025</span>
-          <p className="text-xs uppercase">APL-PS</p>
+    <FadeIn>
+      <footer
+        id="footer"
+        className=" container max-w-7xl h-40 flex justify-between items-center"
+      >
+        <div className="flex items-center gap-2 ">
+          <Avatar size="sm" src="/APRILPOLLO.png" />
+          <span> © {new Date().getFullYear()} </span>
+          <span>{config.titleweb}</span>
+          <Link href="/">Blog</Link>
+          <Link href="/profile">Profile</Link>
         </div>
-        <div className="flex gap-2">
-          {/* <ModeToggle /> */}
-          <Link
-            className="text-default-600 cursor-pointer"
-            href={siteConfig.links.facebook}
-          >
-            <Facebook className="size-5"/>
-          </Link>
-          <Link
-            className="text-default-600 cursor-pointer"
-            href={siteConfig.links.instagram}
-          >
-            <Instagram className="size-5"/>
-          </Link>
-          <Link
-            className="text-default-600 cursor-pointer"
-            href={siteConfig.links.linkedin}
-          >
-            <Linkedin className="size-5"/>
-          </Link>
-          <Link
-            className="text-default-600 cursor-pointer"
-            href={siteConfig.links.twitter}
-          >
-            <Twitter className="size-5"/>
-          </Link>
-        </div>
-      </div>
-    </footer>
+        <div className="flex items-center gap-2">
+            <Link href={config.links.facebook} isExternal>
+              Facebook
+            </Link>
+            <Link href={config.links.instagram} isExternal>
+              Instagram
+            </Link>
+            <Link href={config.links.linkedin} isExternal>
+              Linkedin
+            </Link>
+            <Link href={config.links.twitter} isExternal>
+              Twitter
+            </Link>
+          </div>
+      </footer>
     </FadeIn>
   );
 }
-
-  
