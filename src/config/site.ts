@@ -14,7 +14,7 @@ export const siteConfig = {
     sponsor: "#",
   },
   profile: {
-    avatar: "me/IMG_8993.jpg",
+    avatar: "/me/IMG_8993.jpg",
     name: "Phonsing Taleman",
     nickname: "NO AH",
     bio: "@p.phonsing_",
