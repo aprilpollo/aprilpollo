@@ -8,7 +8,7 @@ const educational = [
     location: "Sripatum University",
     description:
       "เรียนรู้การออกแบบ วิเคราะห์ และทดสอบยานพาหนะ จัดการระบบการผลิต และใช้งานอุปกรณ์ที่เกี่ยวข้องกับยานยนต์",
-    image: "logo/logo2.svg",
+    image: "/logo/logo2.svg",
     mlh: "https://www.spu.ac.th/fac/engineer/programs/next-generation-automotive-engineering-1",
     links: [],
   },
@@ -31,7 +31,7 @@ const work = [
     location: "Somsin Service Limited Partnership",
     description:
       "การจัดการและบำรุงรักษาเครือข่ายเซิร์ฟเวอร์อิเล็กทรอนิกส์ (ATM)",
-    image: "logo/logo3.svg",
+    image: "/logo/logo3.svg",
     mlh: "#",
     links: [],
   },
