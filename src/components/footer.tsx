@@ -10,9 +10,9 @@ export default function Footer() {
     <FadeIn>
       <footer
         id="footer"
-        className=" container max-w-7xl h-40 flex justify-between items-center"
+        className="container max-w-7xl h-40 flex justify-between items-center flex-wrap"
       >
-        <div className="flex items-center gap-2 ">
+        <div className="flex items-center gap-2">
           <Avatar size="sm" src="/APRILPOLLO.png" />
           <span> © {new Date().getFullYear()} </span>
           <span>{config.titleweb}</span>
