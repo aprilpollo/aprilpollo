@@ -42,7 +42,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-
+  --animate-aurora: aurora 8s ease-in-out infinite alternate;
+  
   @keyframes meteor {
     0% {
       transform: rotate(var(--angle)) translateX(0);
@@ -159,11 +160,12 @@
   min-height: calc(100vh - 64px);
 }
 
-/* @layer base {
+@layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
   }
-} */
+}
+

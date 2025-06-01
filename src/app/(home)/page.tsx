@@ -1,30 +1,34 @@
 import { blog } from "@/lib/source";
-import Link from "next/link";
-// import { Metadata } from "next";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { Particles } from "@/components/bg-particles";
+import Interactivekitten from "@/components/animation/Interactivekitten";
 
-// export const metadata: Metadata = {
-//   title: "blog"
-// };
-
+import Link from "next/link";
 
 export default function BlogPage() {
   const posts = blog.getPages();
   return (
     <section className="me">
       <div className="relative p-8 md:p-12 flex h-[250px] md:h-[400px] w-full flex-col overflow-hidden rounded-sm border-b">
+        <Particles
+          className="absolute inset-0 z-0"
+          quantity={100}
+          ease={80}
+          refresh
+        />
+        <Interactivekitten />
         <div className="container max-w-7xl max-sm:px-0 md:py-12">
           <AuroraText
             speed={1}
-            colors={["#5EA2EF", "#0072F5", "#F54C7A"]}
-            className="z-10 uppercase mb-2 max-w-max pb-2 text-4xl font-bold md:text-5xl border-dashed border-b-4 border-fd-muted-foreground"
+            //colors={["#5EA2EF", "#0072F5", "#F54C7A"]}
+            className="z-10 uppercase mb-2 pb-2 text-4xl font-bold md:text-5xl border-b-4 "
           >
-            Aprilpollo Blog
+            Blog
           </AuroraText>
           <p className="z-10 text-sm md:text-base text-fd-accent-foreground">
-            Don’t give up on your dreams. Keep sleeping.
+            © aprilpollo {new Date().getFullYear()}
           </p>
         </div>
       </div>
