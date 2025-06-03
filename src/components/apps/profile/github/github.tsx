@@ -13,6 +13,10 @@ interface primaryLanguageProps {
 interface pinnedItemsProps {
   name: string;
   description: string;
+  parent?: {
+    nameWithOwner: string;
+    url: string;
+  };
   url: string;
   primaryLanguage: primaryLanguageProps;
 }
@@ -39,7 +43,7 @@ export default function GirhubProfile() {
         <Loader loader={isLoaded}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
             {pinnedItems.map((item, index) => (
-              <Card key={index} className="shadow-none border rounded-md h-28">
+              <Card key={index} className="shadow-none border rounded-md min-h-28">
                 <CardHeader className="flex gap-2">
                   <Album className="size-4 text-default-600" />
                   <Link isExternal href={item.url} className="text-sm">
@@ -47,6 +51,19 @@ export default function GirhubProfile() {
                   </Link>
                 </CardHeader>
                 <CardBody className="py-0">
+                  {item.parent && (
+                   <div className="flex items-center gap-1 mb-2">
+                      <span className="text-xs text-default-500">Forked from</span>
+                     <Link
+                      isExternal
+                      href={item.parent.url}
+                      className="text-xs text-default-500"
+                      underline="always"
+                    >
+                      {item.parent.nameWithOwner}
+                    </Link>
+                   </div>
+                  )}
                   <p className="text-xs text-default-500">{item.description}</p>
                 </CardBody>
 

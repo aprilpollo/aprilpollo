@@ -1,4 +1,3 @@
-
 export async function GET() {
   const GITHUB_GRAPHQL_API = process.env.GITHUB_GRAPHQL_API!;
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN!;
@@ -15,6 +14,10 @@ export async function GET() {
             ... on Repository {
               name
               description
+              parent {
+                nameWithOwner
+                url
+              }
               url
               primaryLanguage {
                 name
