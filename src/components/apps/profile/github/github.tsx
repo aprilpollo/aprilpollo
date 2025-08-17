@@ -84,7 +84,7 @@ export default function GirhubProfile() {
         <div className="flex flex-col gap-4">
           <p className="font-bold">Contributions</p>
         <Loader loader={isLoaded}>
-          <GitHubCalendar username="phonsing-hub" />
+          <GitHubCalendar username="aprilpollo" />
         </Loader>
         </div>
       </div>

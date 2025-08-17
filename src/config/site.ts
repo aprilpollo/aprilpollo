@@ -7,7 +7,7 @@ export const siteConfig = {
   links: {
     facebook: "https://facebook.com/noar.ps.3",
     instagram: "https://instagram.com/p.phonsing_",
-    github: "https://github.com/phonsing-Hub",
+    github: "https://github.com/aprilpollo",
     twitter: "https://x.com/phonsing_",
     docs: "https://nextui.org",
     linkedin: "https://linkedin.com/in/polsing-ps",
