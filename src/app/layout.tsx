@@ -1,56 +1,73 @@
-import "./global.css";
-import clsx from "clsx";
-import type { ReactNode } from "react";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Metadata, Viewport } from "next";
-import { RootProvider } from "fumadocs-ui/provider";
-import { Providers } from "@/components/heroui/providers";
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-import { SearchProvider } from "@/components/searchProvider";
-import CustomSearchDialog from "@/components/search";
-import Footer from "@/components/footer";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "@/context/theme-provider";
+import { ModeToggle } from "@/components/mode-toggle";
+import Link from "next/link";
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.titleweb,
-    template: `%s | ${siteConfig.titleweb}`,
+    template: "%s | april pollo",
+    default: "april pollo"
   },
-  description: siteConfig.titlewebdescription,
+  description: "Personal web blog & profile",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo.svg",
   },
 };
 
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-};
-
-export default function Layout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="th" suppressHydrationWarning>
-      <head />
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <RootProvider>
-            <SearchProvider>
-              <CustomSearchDialog />
-              {children}
-            </SearchProvider>
-          </RootProvider>
-          <Footer />
-        </Providers>
-        <Analytics />
-        <SpeedInsights />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <footer className="border-t h-40 z-50 relative">
+            <div className="container max-w-7xl mx-auto flex items-center h-full justify-between">
+              <div className="flex flex-col gap-2">
+                <p className="text-sm text-muted-foreground">
+                  © {new Date().getFullYear()} April Pollo.
+                </p>
+                <div className="flex gap-2">
+                  <Link
+                    href="/"
+                    className="text-sm text-muted-foreground hover:underline"
+                  >
+                    Profile
+                  </Link>
+                  <Link
+                    href="/blog"
+                    className="text-sm text-muted-foreground hover:underline"
+                  >
+                    Blog
+                  </Link>
+                </div>
+              </div>
+              <ModeToggle />
+            </div>
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );

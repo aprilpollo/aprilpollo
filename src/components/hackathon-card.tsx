@@ -1,6 +1,6 @@
 import Link from "next/link";
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { LinkPreview } from "@/components/ui/link-preview";
 import { Badge } from "@/components/ui/badge";
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
   dates: string;
   location: string;
   image?: string;
+  mlh: string;
   links?: readonly {
     icon: React.ReactNode;
     title: string;
@@ -22,6 +23,7 @@ export function HackathonCard({
   dates,
   location,
   image,
+  mlh,
   links,
 }: Props) {
   return (
@@ -37,8 +39,8 @@ export function HackathonCard({
           <time className="text-xs text-muted-foreground">{dates}</time>
         )}
         <h2 className="font-semibold leading-none">{title}</h2>
-        {location && (
-          <p className="text-sm text-muted-foreground">{location}</p>
+        {location &&  (
+          <LinkPreview url={mlh} className="text-sm font-bold w-fit" >{location}</LinkPreview>
         )}
         {description && (
           <span className="prose dark:prose-invert text-sm text-muted-foreground">

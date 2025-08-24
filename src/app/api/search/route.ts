@@ -1,4 +1,7 @@
-import { blog } from '@/lib/source';
+import { blog as source } from '@/lib/source';
 import { createFromSource } from 'fumadocs-core/search/server';
 
-export const { GET } = createFromSource(blog);
+export const { GET } = createFromSource(source, {
+  language: 'english',
+  
+});
