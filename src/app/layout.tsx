@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/context/theme-provider";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -18,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     template: "%s | april pollo",
-    default: "april pollo"
+    default: "april pollo",
   },
   description: "Personal web blog & profile",
   icons: {
@@ -68,6 +70,8 @@ export default function RootLayout({
             </div>
           </footer>
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
